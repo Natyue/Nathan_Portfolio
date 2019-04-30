@@ -56,6 +56,7 @@ main {
 
   .icons {
     margin-top: 1rem;
+    color: set-text-color($primary-color);
 
     a {
       padding: 0.4rem;
@@ -87,6 +88,8 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
+    max-width: 225px;
+    max-height: 225px;
     border: $secondary-color 3px solid;
   }
 
@@ -112,6 +115,48 @@ main {
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
 }
 
 #main-footer {
