@@ -6,12 +6,11 @@
 }
 
 body {
-  @include background;
   background: $primary-color;
-  color: set-text-color($primary-color);
+  color: $text-color;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.5;
 }
 
@@ -20,16 +19,24 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400;
+  font-weight: 600;
+  text-align: center;
+
+  &.main-heading {
+    color: $primary-color;
+    font-size: 6vw;
+  }
 
   &.lg-heading {
-    font-size: 6rem;
+    font-size: 2.5rem;
   }
 
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    font-family: "Just Another Hand", cursive;
+    font-size: 1.7rem;
+    font-weight: 400;
   }
 }
 
@@ -48,15 +55,15 @@ header {
   color: $secondary-color;
 }
 
-main {
+// Sections
+section {
   padding: 4rem;
-  // height: 100%;
-  // main page (100vh) height - footer height(60px) keeps the footer stuck on the bottom
-  min-height: calc(100vh - 60px);
+  height: 100%;
 
   .icons {
     margin-top: 1rem;
-    color: set-text-color($primary-color);
+    color: $primary-color;
+    text-align: center;
 
     a {
       padding: 0.4rem;
@@ -69,52 +76,59 @@ main {
   }
 
   &#home {
+    @include background;
     overflow: hidden;
+    height: 100vh;
+
     h1 {
       margin-top: 20vh;
     }
+  }
+
+  &#contact {
+    // contact section(100vh) height - footer height(60px) keeps the footer stuck on the bottom
+    min-height: calc(100vh - 70px);
   }
 }
 
 // About Page
 .about-info {
   display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
-
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    max-width: 225px;
-    max-height: 225px;
-    border: $secondary-color 3px solid;
-  }
+  grid-gap: 2rem;
+  grid-template-areas: "bio skill1";
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 
   .bio {
     grid-area: bio;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
+    .bio-image {
+      grid-area: bioimage;
+      margin: auto;
+      border-radius: 50%;
+      max-width: 225px;
+      max-height: 225px;
+      border: $secondary-color 3px solid;
+    }
+    p {
+      width: 70%;
+      margin: auto;
+    }
   }
 
-  .job-1 {
-    grid-area: job1;
+  .skill-1 {
+    grid-area: skill1;
   }
 
-  .job-2 {
-    grid-area: job2;
-  }
-
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: ligten($primary-color, 5);
+  .skill ul {
+    background: $primary-color;
     padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    border-left: $secondary-color 5px solid;
+    list-style-type: none;
+    font-weight: 800;
   }
 }
 
@@ -137,26 +151,45 @@ main {
 }
 
 // Contact Page
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
+#contact {
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
 
-  div {
-    font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    @include easeOut;
+    div {
+      font-size: 1.7rem;
+      border: 3px #fff solid;
+      padding: 1.5rem 2.5rem;
+      margin-bottom: 3rem;
+      @include easeOut;
 
-    &:hover {
-      padding: 0.5rem 1.5rem;
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
-        color: set-text-color($secondary-color);
+      &:hover {
+        padding: 0.5rem 1.5rem;
+        border-radius: 35px;
+        background: $secondary-color;
+        color: $primary-color;
+        span {
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  .icons {
+    text-align: center;
+    color: $text-color;
+    font-size: 1.7rem;
+
+    a {
+      padding: 0.4rem;
+      color: $text-color;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
       }
     }
   }
@@ -169,8 +202,8 @@ main {
   border: 0;
   margin-bottom: 0.3rem;
   &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
+    background: $text-color;
+    color: $secondary-color;
   }
 }
 
@@ -188,10 +221,12 @@ main {
 
 #main-footer {
   text-align: center;
-  padding: 1rem;
-  background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
-  height: 60px;
+  align-self: center;
+  justify-self: center;
+  padding: 0.5rem;
+  background: $text-color;
+  color: $secondary-color;
+  height: 70px;
 }
 
 // Needs to run after the inital CSS

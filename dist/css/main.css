@@ -1,139 +1,62 @@
-.menu-btn {
-  position: absolute;
-  z-index: 3;
-  right: 35px;
-  top: 35px;
-  cursor: pointer;
-  transition: all 0.5s ease-out; }
-  .menu-btn .btn-line {
-    width: 28px;
-    height: 3px;
-    margin: 0 0 5px 0;
-    background: #fff;
-    transition: all 0.5s ease-out; }
-  .menu-btn.close {
-    transform: rotate(180deg); }
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0; }
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(135deg) translate(-6px, 6px); }
-
 .menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  opacity: 0.95;
-  visibility: hidden; }
-  .menu.show {
-    visibility: visible; }
-  .menu-branding, .menu-nav {
+  position: sticky;
+  top: 0; }
+  .menu .menu-nav {
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    float: left;
-    width: 50%;
-    height: 100vh;
-    overflow: hidden; }
-  .menu-nav {
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+    background: #23353a;
+    border-bottom: 3px solid #04c2c9;
     margin: 0;
-    padding: 0;
-    background: #373737;
-    list-style: none;
-    transform: translate3d(0, -100%, 0);
-    transition: all 0.5s ease-out; }
-    .menu-nav.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-branding {
-    margin: 0;
-    padding: 0;
-    background: #444;
-    list-style: none;
-    transform: translate3d(0, 100%, 0);
-    transition: all 0.5s ease-out; }
-    .menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-    .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
-      background: url("../img/profilepicbigger3.png");
-      background-repeat: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: solid 3px #eece1a; }
-  .menu .nav-item {
-    transform: translate3d(600px, 0, 0);
-    transition: all 0.5s ease-out; }
-    .menu .nav-item.show {
-      transform: translate3d(0, 0, 0); }
-    .menu .nav-item.current > a {
-      color: #eece1a; }
-  .menu .nav-link {
-    display: inline-block;
-    position: relative;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.5s ease-out; }
-    .menu .nav-link:hover {
-      color: #eece1a; }
-
-.nav-item:nth-child(1) {
-  transition-delay: 0.1s; }
-
-.nav-item:nth-child(2) {
-  transition-delay: 0.2s; }
-
-.nav-item:nth-child(3) {
-  transition-delay: 0.3s; }
-
-.nav-item:nth-child(4) {
-  transition-delay: 0.4s; }
+    padding: 1rem; }
+    .menu .menu-nav .nav-link {
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 1rem;
+      font-weight: 400;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.5s ease-out; }
+      .menu .menu-nav .nav-link:hover {
+        color: #04c2c9; }
 
 * {
   box-sizing: border-box; }
 
 body {
-  background: #444;
-  color: #fff;
+  background: #fff;
+  color: #616161;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.5; }
-  body#bg-img {
-    background: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: cover; }
-    body#bg-img:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: rgba(68, 68, 68, 0.9); }
 
 h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400; }
+  font-weight: 600;
+  text-align: center; }
+  h1.main-heading,
+  h2.main-heading,
+  h3.main-heading {
+    color: #fff;
+    font-size: 6vw; }
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 2.5rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    font-family: "Just Another Hand", cursive;
+    font-size: 1.7rem;
+    font-weight: 400; }
 
 a {
   color: #fff;
@@ -145,49 +68,62 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #04c2c9; }
 
-main {
+section {
   padding: 4rem;
-  min-height: calc(100vh - 60px); }
-  main .icons {
+  height: 100%; }
+  section .icons {
     margin-top: 1rem;
-    color: #fff; }
-    main .icons a {
+    color: #fff;
+    text-align: center; }
+    section .icons a {
       padding: 0.4rem; }
-      main .icons a:hover {
-        color: #eece1a;
+      section .icons a:hover {
+        color: #04c2c9;
         transition: all 0.5s ease-out; }
-  main#home {
-    overflow: hidden; }
-    main#home h1 {
+  section#home {
+    overflow: hidden;
+    height: 100vh; }
+    section#home#home {
+      background: linear-gradient(rgba(49, 46, 46, 0.84), rgba(16, 16, 16, 0.84)), url(../img/background.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      z-index: -1; }
+    section#home h1 {
       margin-top: 20vh; }
+  section#contact {
+    min-height: calc(100vh - 70px); }
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr); }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    max-width: 225px;
-    max-height: 225px;
-    border: #eece1a 3px solid; }
+  grid-gap: 2rem;
+  grid-template-areas: "bio skill1";
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-2 {
-    grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
-  .about-info .job {
-    background: ligten(#444, 5);
+    font-size: 1.2rem; }
+    .about-info .bio .bio-image {
+      grid-area: bioimage;
+      margin: auto;
+      border-radius: 50%;
+      max-width: 225px;
+      max-height: 225px;
+      border: #04c2c9 3px solid; }
+    .about-info .bio p {
+      width: 70%;
+      margin: auto; }
+  .about-info .skill-1 {
+    grid-area: skill1; }
+  .about-info .skill ul {
+    background: #fff;
     padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
+    border-left: #04c2c9 5px solid;
+    list-style-type: none;
+    font-weight: 800; }
 
 .projects {
   display: grid;
@@ -198,27 +134,39 @@ main {
     border: 3px #fff solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #eece1a;
+      border-color: #04c2c9;
       transition: all 0.5s ease-out; }
 
-.boxes {
+#contact .boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem; }
-  .boxes div {
-    font-size: 2rem;
+  #contact .boxes div {
+    font-size: 1.7rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
-    .boxes div:hover {
+    #contact .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      background: #eece1a;
-      color: #000; }
-      .boxes div:hover span {
-        color: #000; }
+      border-radius: 35px;
+      background: #04c2c9;
+      color: #fff; }
+      #contact .boxes div:hover span {
+        color: #616161; }
+
+#contact .icons {
+  text-align: center;
+  color: #616161;
+  font-size: 1.7rem; }
+  #contact .icons a {
+    padding: 0.4rem;
+    color: #616161; }
+    #contact .icons a:hover {
+      color: #04c2c9;
+      transition: all 0.5s ease-out; }
 
 .btn, .btn-light, .btn-dark {
   display: block;
@@ -226,66 +174,132 @@ main {
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-light:hover, .btn-dark:hover {
-    background: #eece1a;
-    color: #000; }
+    background: #616161;
+    color: #04c2c9; }
 
 .btn-light {
-  background: #c4c4c4;
+  background: white;
   color: #333; }
 
 .btn-dark {
-  background: black;
+  background: gray;
   color: #fff; }
 
 #main-footer {
   text-align: center;
-  padding: 1rem;
-  background: #2b2b2b;
-  color: #fff;
-  height: 60px; }
+  align-self: center;
+  justify-self: center;
+  padding: 0.5rem;
+  background: #616161;
+  color: #04c2c9;
+  height: 70px; }
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 768px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
-
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 1rem; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../img/portrait_small.jpg");
-      width: 150px;
-      height: 150px; }
-  .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr; }
-  .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+@media screen and (max-width: 768px) {
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: repeat(2, 1fr); }
+  section {
+    align-items: center;
+    text-align: center; }
+    section .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  .about-info {
+    grid-template-areas: "bio" "skill1";
+    grid-template-columns: 1fr; }
+    .about-info .skill ul {
+      border-top: #04c2c9 5px solid;
+      border-bottom: #04c2c9 5px solid;
+      border-left: none;
+      padding: 1.5rem; } }
+
+@media screen and (max-width: 500px) {
+  .projects {
+    grid-template-columns: 1fr; }
+  .menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    transition: all 0.5s ease-out; }
+    .menu-btn .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: #04c2c9;
+      transition: all 0.5s ease-out; }
+    .menu-btn.close {
+      transform: rotate(180deg);
+      top: 0;
+      right: 0; }
+      .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); }
+      .menu-btn.close .btn-line:nth-child(2) {
+        opacity: 0; }
+      .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(135deg) translate(-6px, 6px); }
+  .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden; }
+    .menu.show {
+      visibility: visible; }
+    .menu-nav {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: translate3d(0, -100%, 0);
+      transition: all 0.5s ease-out; }
+      .menu-nav.show {
+        transform: translate3d(0, 0, 0); }
+    .menu .nav-item {
+      transform: translate3d(600px, 0, 0);
+      transition: all 0.5s ease-out; }
+      .menu .nav-item.show {
+        transform: translate3d(0, 0, 0); }
+      .menu .nav-item.current > a {
+        color: #04c2c9; }
+    .menu .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 300;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.5s ease-out; }
+      .menu .nav-link:hover {
+        color: #04c2c9; }
+  .nav-item:nth-child(1) {
+    transition-delay: 0.1s; }
+  .nav-item:nth-child(2) {
+    transition-delay: 0.2s; }
+  .nav-item:nth-child(3) {
+    transition-delay: 0.3s; }
+  .nav-item:nth-child(4) {
+    transition-delay: 0.4s; }
+  .about-info {
+    grid-template-areas: "bio" "skill1";
+    grid-template-columns: 1fr; }
+    .about-info .skill ul {
+      border-top: #04c2c9 5px solid;
+      border-bottom: #04c2c9 5px solid;
+      border-left: none;
+      padding: 1.5rem; } }

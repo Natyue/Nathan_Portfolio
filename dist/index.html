@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
@@ -13,66 +17,179 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Welcome To My Portfolio</title>
   </head>
-  <body id="bg-img">
-    <header>
+  <body>
+    <header id="mobile-header">
       <div class="menu-btn">
         <div class="btn-line"></div>
         <div class="btn-line"></div>
         <div class="btn-line"></div>
       </div>
-
-      <nav class="menu">
-        <div class="menu-branding">
-          <div class="portrait"></div>
-        </div>
-        <ul class="menu-nav">
-          <li class="nav-item current">
-            <a href="index.html" class="nav-link">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">
-              About Me
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="work.html" class="nav-link">
-              My Work
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-              How To Reach Me
-            </a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <main id="home">
-      <h1 class="lg-heading">
+    <section id="home">
+      <h1 class="main-heading">
         Nathan
         <span class="text-secondary">Yue</span>
       </h1>
       <h2 class="sm-heading">
-        Web Developer, Programmer, Designer & Entrepreneur
+        Web Developer, Programmer, & Entrepreneur
       </h2>
       <div class="icons">
-        <a href="#!">
-          <i class="fab fa-twitter fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="#!">
+        <a href="https://www.linkedin.com/in/nathan-yue-71619a162/">
           <i class="fab fa-linkedin fa-2x"></i>
         </a>
-        <a href="#!">
+        <a href="https://github.com/natyue">
           <i class="fab fa-github fa-2x"></i>
         </a>
       </div>
-    </main>
+    </section>
+
+    <nav class="menu">
+      <ul class="menu-nav">
+        <li class="nav-item">
+          <a href="#home" class="nav-link">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">
+            About Me
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#work" class="nav-link">
+            My Work
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">
+            How To Reach Me
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="about">
+      <h1 class="lg-heading">
+        About
+        <span class="text-secondary">Me</span>
+      </h1>
+      <h2 class="sm-heading">
+        Let me tell you a few things...
+      </h2>
+      <div class="about-info">
+        <div class="bio">
+          <img src="img/profilepic.png" alt="Nathan Yue " class="bio-image" />
+          <h3 class="text-secondary">Who am I?</h3>
+          <p>
+            I'm a Web Developer located in San Diego, CA, who is in love with
+            coding and has a passion for dynamic user experiences.
+          </p>
+        </div>
+        <div class="skill skill-1">
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Bootstrap</li>
+            <li>Sass</li>
+            <li>Javascript</li>
+            <li>jQuery</li>
+            <li>React</li>
+            <li>PHP</li>
+            <li>Wordpress</li>
+            <li>Apache</li>
+            <li>MySQL</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h1 class="lg-heading">
+        My
+        <span class="text-secondary">Work</span>
+      </h1>
+      <h2 class="sm-heading">
+        Check out some of my projects...
+      </h2>
+      <div class="projects">
+        <div class="item">
+          <a href="http://teachersforkorea.epizy.com"
+            ><img src="img/projects/teachersforkorea.png" alt="Project"
+          /></a>
+          <a href="http://teachersforkorea.epizy.com" class="btn-light"
+            ><i class="fas fa-eye"></i> Project</a
+          >
+          <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
+        </div>
+        <div class="item">
+          <a href="https://immense-beyond-81508.herokuapp.com/"
+            ><img src="img/projects/yelpcamp.png" alt="Project"
+          /></a>
+          <a
+            href="https://immense-beyond-81508.herokuapp.com/"
+            class="btn-light"
+            ><i class="fas fa-eye"></i> Project</a
+          >
+          <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
+        </div>
+        <div class="item">
+          <a href="http://ascendtech.epizy.com"
+            ><img src="img/projects/ascendtech.png" alt="Project"
+          /></a>
+          <a href="http://ascendtech.epizy.com" class="btn-light"
+            ><i class="fas fa-eye"></i> Project</a
+          >
+          <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
+        </div>
+        <div class="item">
+          <a href="#!"><img src="img/projects/resized4.jpg" alt="Project"/></a>
+          <a href="#" class="btn-light"><i class="fas fa-eye"></i> Project </a>
+          <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
+        </div>
+        <div class="item">
+          <a href="#!"><img src="img/projects/resized5.jpg" alt="Project"/></a>
+          <a href="#" class="btn-light"><i class="fas fa-eye"></i> Project </a>
+          <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1 class="lg-heading">
+        Contact
+        <span class="text-secondary">Me</span>
+      </h1>
+      <h2 class="sm-heading">
+        This is how you can reach me...
+      </h2>
+      <div class="boxes">
+        <div>
+          <span class="text-secondary">Email:</span>
+          Cyue123@gmail.com
+        </div>
+        <div>
+          <span class="text-secondary">Phone:</span>
+          (858) 210-0499
+        </div>
+      </div>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/nathan-yue-71619a162/">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="https://github.com/natyue">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer id="main-footer">
+      Copyright &copy; 2019 Nathan Yue
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>

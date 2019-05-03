@@ -1,5 +1,6 @@
-$primary-color: #444;
-$secondary-color: #eece1a;
+$primary-color: #fff;
+$secondary-color: #04c2c9;
+$text-color: #616161;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
@@ -10,31 +11,129 @@ $background-opacity: 0.9;
 
 @mixin background {
   @if $show-home-image {
-    &#bg-img {
-      background: $home-image;
+    &#home {
+      background: linear-gradient(
+          rgba(49, 46, 46, 0.84),
+          rgba(16, 16, 16, 0.84)
+        ),
+        $home-image;
       background-attachment: fixed;
       background-size: cover;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: rgba($primary-color, $background-opacity);
-      }
+      z-index: -1;
     }
   }
 }
 
-//Set Text Color
-@function set-text-color($color) {
-  @if (lightness($color) > 40) {
-    @return #000;
-  } @else {
-    @return #fff;
+@mixin toggleButton {
+  // Menu Button
+  .menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: $secondary-color;
+      @include easeOut;
+    }
+
+    // Rotate Into X With Menu Lines
+    &.close {
+      transform: rotate(180deg);
+      top: 0;
+      right: 0;
+
+      .btn-line {
+        //line 1 - Rotate
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        //line 2 - Hide
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        //line 3 - Rotate
+        &:nth-child(3) {
+          transform: rotate(135deg) translate(-6px, 6px);
+        }
+      }
+    }
+  }
+
+  // Menu Overlay
+  .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+    }
+
+    &-nav {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: translate3d(0, -100%, 0);
+      @include easeOut;
+
+      &.show {
+        //slide in from top
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .nav-item {
+      transform: translate3d(600px, 0, 0);
+      @include easeOut;
+
+      &.show {
+        //Slide in from right
+        transform: translate3d(0, 0, 0);
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+
+    .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 300;
+      color: $primary-color;
+      text-decoration: none;
+      @include easeOut;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  // for(x = 0; i < 4; i++)
+  //Delay each nav item slide by 0.1s
+  @for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+      transition-delay: $x * 0.1s;
+    }
   }
 }
 

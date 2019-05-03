@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Responsive Website Portfolio",
   "main": "index.js",
+  "homepage": "https://natyue.github.io/nathan_portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Nathan",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0"
   }
 }
