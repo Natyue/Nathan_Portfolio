@@ -144,10 +144,12 @@ section {
   align-items: center;
   margin-top: 1rem; }
   #contact .boxes div {
-    font-size: 1.7rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
+    font-size: 1.5rem;
+    border: 3px #04c2c9 solid;
+    border-radius: 35px;
+    padding: 1rem 2rem;
     margin-bottom: 3rem;
+    color: #616161;
     transition: all 0.5s ease-out; }
     #contact .boxes div:hover {
       padding: 0.5rem 1.5rem;

@@ -160,10 +160,12 @@ section {
     margin-top: 1rem;
 
     div {
-      font-size: 1.7rem;
-      border: 3px #fff solid;
-      padding: 1.5rem 2.5rem;
+      font-size: 1.5rem;
+      border: 3px $secondary-color solid;
+      border-radius: 35px;
+      padding: 1rem 2rem;
       margin-bottom: 3rem;
+      color: $text-color;
       @include easeOut;
 
       &:hover {
