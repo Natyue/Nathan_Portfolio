@@ -93,7 +93,7 @@ section {
     section#home h1 {
       margin-top: 20vh; }
   section#contact {
-    min-height: calc(100vh - 70px); }
+    min-height: calc(100vh - 130px); }
 
 .about-info {
   display: grid;
@@ -137,6 +137,40 @@ section {
       border-color: #04c2c9;
       transition: all 0.5s ease-out; }
 
+#contact .form-container {
+  padding: 3% 1%;
+  margin: 0 auto 4rem auto; }
+  #contact .form-container form {
+    max-width: 500px;
+    margin: auto;
+    text-align: center; }
+    #contact .form-container form input,
+    #contact .form-container form textarea {
+      width: 100%;
+      outline: none;
+      border: 0;
+      padding: 10px 15px;
+      background: #fff;
+      font-size: 12pt;
+      margin-bottom: 5px;
+      color: #333;
+      box-shadow: 0.1px 0.1px 5px #04c2c9; }
+    #contact .form-container form textarea {
+      min-height: 9rem; }
+    #contact .form-container form button {
+      width: 50%;
+      padding: 10px;
+      background: #fff;
+      border: none;
+      color: #04c2c9;
+      border-radius: 15px;
+      border: 2px solid #04c2c9;
+      transition: all 0.5s ease-out; }
+      #contact .form-container form button:hover {
+        background: #04c2c9;
+        color: #fff;
+        padding: 7px; }
+
 #contact .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -146,14 +180,14 @@ section {
   #contact .boxes div {
     font-size: 1.5rem;
     border: 3px #04c2c9 solid;
-    border-radius: 35px;
-    padding: 1rem 2rem;
+    border-radius: 40px;
+    padding: 0.9rem 2rem;
     margin-bottom: 3rem;
     color: #616161;
     transition: all 0.5s ease-out; }
     #contact .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      border-radius: 35px;
+      border-radius: 40px;
       background: #04c2c9;
       color: #fff; }
       #contact .boxes div:hover span {
@@ -164,7 +198,7 @@ section {
   color: #616161;
   font-size: 1.7rem; }
   #contact .icons a {
-    padding: 0.4rem;
+    padding: 0.7rem;
     color: #616161; }
     #contact .icons a:hover {
       color: #04c2c9;
@@ -194,7 +228,15 @@ section {
   padding: 0.5rem;
   background: #616161;
   color: #04c2c9;
-  height: 70px; }
+  height: 130px; }
+  #main-footer .homebutton {
+    text-align: center;
+    padding-bottom: 1rem; }
+    #main-footer .homebutton a {
+      color: #04c2c9; }
+      #main-footer .homebutton a:hover {
+        font-size: 1.5rem;
+        transition: all 0.5s ease-out; }
 
 @media screen and (min-width: 1171px) {
   .projects {
@@ -220,7 +262,9 @@ section {
       border-top: #04c2c9 5px solid;
       border-bottom: #04c2c9 5px solid;
       border-left: none;
-      padding: 1.5rem; } }
+      padding: 1.5rem; }
+  form {
+    margin-bottom: 2rem; } }
 
 @media screen and (max-width: 500px) {
   .projects {

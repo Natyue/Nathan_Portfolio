@@ -87,7 +87,7 @@ section {
 
   &#contact {
     // contact section(100vh) height - footer height(60px) keeps the footer stuck on the bottom
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 130px);
   }
 }
 
@@ -152,6 +152,51 @@ section {
 
 // Contact Page
 #contact {
+  .form-container {
+    padding: 3% 1%;
+    margin: 0 auto 4rem auto;
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+
+      input,
+      textarea {
+        width: 100%;
+        outline: none;
+        border: 0;
+        padding: 10px 15px;
+        background: $primary-color;
+        font-size: 12pt;
+        margin-bottom: 5px;
+        color: #333;
+        box-shadow: 0.1px 0.1px 5px $secondary-color;
+      }
+      textarea {
+        min-height: 9rem;
+      }
+
+      button {
+        width: 50%;
+        padding: 10px;
+        background: $primary-color;
+        border: none;
+        color: $secondary-color;
+        border-radius: 15px;
+        border: 2px solid $secondary-color;
+        // box-shadow: 0.1px 0.1px 4px $secondary-color;
+        @include easeOut;
+
+        &:hover {
+          background: $secondary-color;
+          color: $primary-color;
+          padding: 7px;
+        }
+      }
+    }
+  }
+
   .boxes {
     display: flex;
     flex-wrap: wrap;
@@ -162,15 +207,15 @@ section {
     div {
       font-size: 1.5rem;
       border: 3px $secondary-color solid;
-      border-radius: 35px;
-      padding: 1rem 2rem;
+      border-radius: 40px;
+      padding: 0.9rem 2rem;
       margin-bottom: 3rem;
       color: $text-color;
       @include easeOut;
 
       &:hover {
         padding: 0.5rem 1.5rem;
-        border-radius: 35px;
+        border-radius: 40px;
         background: $secondary-color;
         color: $primary-color;
         span {
@@ -186,7 +231,7 @@ section {
     font-size: 1.7rem;
 
     a {
-      padding: 0.4rem;
+      padding: 0.7rem;
       color: $text-color;
 
       &:hover {
@@ -228,7 +273,21 @@ section {
   padding: 0.5rem;
   background: $text-color;
   color: $secondary-color;
-  height: 70px;
+  height: 130px;
+
+  .homebutton {
+    text-align: center;
+    padding-bottom: 1rem;
+
+    a {
+      color: $secondary-color;
+
+      &:hover {
+        font-size: 1.5rem;
+        @include easeOut;
+      }
+    }
+  }
 }
 
 // Needs to run after the inital CSS

@@ -1,3 +1,62 @@
+<?php
+
+include "phpmailer/PHPMailerAutoload.php"; // include the library file
+include "phpmailer/class.phpmailer.php"; // include the class name
+include "phpmailer/class.smtp.php";
+if(isset($_POST["submit"])){
+$name = validateInput($_POST["name"]);
+$email = validateInput($_POST["email"]);
+$message = validateInput($_POST["message"]);
+$subject = "Email From Your Portfolio";
+// $subject = "Email from Portfolio:  ".$name."-".$email.";
+$allMsg =
+"Name:	".$name."<br />
+Email:	".$email."<br />
+Message:	".$message."
+";
+
+    $mail = new PHPMailer;
+    //Enable SMTP debugging. 
+    $mail->SMTPDebug = 0;
+    //Set PHPMailer to use SMTP.
+    $mail->isSMTP();
+    //Set SMTP host name                          
+    $mail->Host = "smtp.gmail.com";
+    //Set this to true if SMTP host requires authentication to send email
+    $mail->SMTPAuth = true;
+    //Provide username and password     
+    $mail->Username = "nyue.07@gmail.com";
+    $mail->Password = "Phathead582693";
+    //If SMTP requires TLS encryption then set it
+    $mail->SMTPSecure = "ssl";
+    //Set TCP port to connect to 
+    $mail->Port = 465;
+    $mail->setFrom($email, $name);
+    $mail->addAddress ("nyue.07@gmail.com");   // Add a recipient
+    $mail->addReplyTo($email, $name);
+
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+
+
+    $mail->Body = $allMsg;
+    if (!$mail->send()) {
+       $error = "Sorry, Message was not sent. Please try again.";
+    } else {
+          $success = "Thank You! Your mail was sent successfully";
+      }
+
+}  
+
+function validateInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    $data = htmlentities($data);
+    return $data;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
