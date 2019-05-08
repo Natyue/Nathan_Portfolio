@@ -1,5 +1,4 @@
 <?php
-
 include "phpmailer/PHPMailerAutoload.php"; // include the library file
 include "phpmailer/class.phpmailer.php"; // include the class name
 include "phpmailer/class.smtp.php";
@@ -43,7 +42,7 @@ Message:	".$message."
     if (!$mail->send()) {
        $error = "Sorry, Message was not sent. Please try again.";
     } else {
-          $success = "Thank You! Your mail was sent successfully";
+          $success = "Thank You! Your mail was sent successfully!";
       }
 
 }  
@@ -73,10 +72,23 @@ function validateInput($data) {
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/jquery.aniview.js"></script>
     <title>Welcome To My Portfolio</title>
   </head>
   <body>
+    <div id="preload">
+      <img src="img/background.jpg" />
+    </div>
     <header id="mobile-header">
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -86,14 +98,14 @@ function validateInput($data) {
     </header>
 
     <section id="home">
-      <h1 class="main-heading">
+      <h1 class="main-heading aniview delay" data-av-animation="bounceInLeft">
         Nathan
         <span class="text-secondary">Yue</span>
       </h1>
-      <h2 class="sm-heading">
+      <h2 class="sm-heading aniview delay" data-av-animation="bounceInRight">
         Front End Web Developer, Programmer, & Entrepreneur
       </h2>
-      <div class="icons">
+      <div class="icons aniview delay" data-av-animation="bounceInRight">
         <a href="https://www.linkedin.com/in/nathan-yue-71619a162/">
           <i class="fab fa-linkedin fa-2x"></i>
         </a>
@@ -129,15 +141,15 @@ function validateInput($data) {
     </nav>
 
     <section id="about">
-      <h1 class="lg-heading">
+      <h1 class="lg-heading aniview" data-av-animation="slideInLeft">
         About
         <span class="text-secondary">Me</span>
       </h1>
-      <h2 class="sm-heading">
+      <h2 class="sm-heading aniview" data-av-animation="slideInLeft">
         Let me tell you a few things...
       </h2>
       <div class="about-info">
-        <div class="bio">
+        <div class="bio aniview" data-av-animation="bounceInRight">
           <img src="img/profilepic.png" alt="Nathan Yue " class="bio-image" />
           <h3 class="text-secondary">Who am I?</h3>
           <p>
@@ -145,7 +157,7 @@ function validateInput($data) {
             coding and has a passion for dynamic user experiences.
           </p>
         </div>
-        <div class="skill skill-1">
+        <div class="skill skill-1 aniview" data-av-animation="bounceInLeft">
           <ul>
             <li>HTML5</li>
             <li>CSS3</li>
@@ -168,15 +180,15 @@ function validateInput($data) {
     </section>
 
     <section id="work">
-      <h1 class="lg-heading">
+      <h1 class="lg-heading aniview" data-av-animation="slideInRight">
         My
         <span class="text-secondary">Work</span>
       </h1>
-      <h2 class="sm-heading">
+      <h2 class="sm-heading aniview" data-av-animation="slideInRight">
         Check out some of my projects...
       </h2>
       <div class="projects">
-        <div class="item">
+        <div class="item  aniview first" data-av-animation="rotateInUpLeft">
           <a href="http://teachersforkorea.epizy.com"
             ><img src="img/projects/teachersforkorea.png" alt="Project"
           /></a>
@@ -185,7 +197,7 @@ function validateInput($data) {
           >
           <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
         </div>
-        <div class="item">
+        <div class="item aniview second" data-av-animation="rotateInUpRight">
           <a href="https://immense-beyond-81508.herokuapp.com/"
             ><img src="img/projects/yelpcamp.png" alt="Project"
           /></a>
@@ -196,7 +208,7 @@ function validateInput($data) {
           >
           <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
         </div>
-        <div class="item">
+        <div class="item aniview third" data-av-animation="rotateInUpLeft">
           <a href="http://ascendtech.epizy.com"
             ><img src="img/projects/ascendtech.png" alt="Project"
           /></a>
@@ -205,12 +217,12 @@ function validateInput($data) {
           >
           <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
         </div>
-        <div class="item">
+        <div class="item aniview fourth" data-av-animation="rotateInUpRight">
           <a href="#!"><img src="img/projects/resized4.jpg" alt="Project"/></a>
           <a href="#" class="btn-light"><i class="fas fa-eye"></i> Project </a>
           <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
         </div>
-        <div class="item">
+        <div class="item aniview fifth" data-av-animation="rotateInUpLeft">
           <a href="#!"><img src="img/projects/resized5.jpg" alt="Project"/></a>
           <a href="#" class="btn-light"><i class="fas fa-eye"></i> Project </a>
           <a href="#" class="btn-dark"><i class="fab fa-github"></i> Github </a>
@@ -219,33 +231,58 @@ function validateInput($data) {
     </section>
 
     <section id="contact">
-      <h1 class="lg-heading">
+      <h1 class="lg-heading aniview" data-av-animation="slideInLeft">
         Contact
         <span class="text-secondary">Me</span>
       </h1>
-      <h2 class="sm-heading">
+      <h2 class="sm-heading aniview" data-av-animation="slideInLeft">
         This is how you can reach me...
       </h2>
 
       <div class="form-container">
-        <form action="" method="POST">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
           <div>
-            <input type="text" name="name" placeholder="Name" required />
+            <input
+              class="aniview"
+              data-av-animation="slideInLeft"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
           </div>
           <div>
-            <input type="email" name="email" placeholder="Email" required />
+            <input
+              class="aniview"
+              data-av-animation="slideInRight"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
           </div>
           <div>
             <textarea
+              class="aniview"
+              data-av-animation="slideInLeft"
               name="message"
               placeholder="Your Message"
               required
             ></textarea>
           </div>
-          <button type="submit" name="button">Submit</button>
+          <span class="success"><?php echo $success?></span>
+          <span class="error"><?php echo $error?></span>
+          <button
+            class="aniview"
+            data-av-animation="slideInRight"
+            type="submit"
+            name="button"
+          >
+            Submit
+          </button>
         </form>
       </div>
-      <div class="boxes">
+      <div class="boxes aniview" data-av-animation="bounceInUp">
         <div>
           <span class="text-secondary">Email:</span>
           Cyue123@gmail.com
@@ -254,23 +291,29 @@ function validateInput($data) {
           <span class="text-secondary">Phone:</span>
           (858) 210-0499
         </div>
-
         <a href="img/Nathan Resume.pdf" download="Nathan Yue's Resume"
-          ><div><span class="text-secondary">Resume:</span> PDF File</div></a
+          ><div>
+            <span class="text-secondary">Resume:</span>
+            PDF File
+          </div></a
         >
       </div>
       <div class="icons">
-        <a href="https://www.linkedin.com/in/nathan-yue-71619a162/">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/natyue">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
+        <div class="aniview" data-av-animation="slideInLeft">
+          <a href="https://www.linkedin.com/in/nathan-yue-71619a162/">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+        <div class="aniview" data-av-animation="slideInRight">
+          <a href="https://github.com/natyue">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
       </div>
     </section>
 
     <footer id="main-footer">
-      <div class="homebutton">
+      <div class="homebutton aniview" data-av-animation="bounceInUp">
         <a href="#home">
           <i class="fas fa-arrow-circle-up fa-3x"></i>
         </a>

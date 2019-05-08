@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+div #preload {
+  display: none;
+}
+
 body {
   background: $primary-color;
   color: $text-color;
@@ -38,6 +42,9 @@ h3 {
     font-size: 1.7rem;
     font-weight: 400;
   }
+  &.delay {
+    @include delay;
+  }
 }
 
 a {
@@ -64,6 +71,12 @@ section {
     margin-top: 1rem;
     color: $primary-color;
     text-align: center;
+    display: flex;
+    justify-content: center;
+
+    &.delay {
+      @include delay;
+    }
 
     a {
       padding: 0.4rem;
@@ -104,6 +117,7 @@ section {
   .bio {
     grid-area: bio;
     font-size: 1.2rem;
+    @include slow;
 
     .bio-image {
       grid-area: bioimage;
@@ -121,6 +135,7 @@ section {
 
   .skill-1 {
     grid-area: skill1;
+    @include slow;
   }
 
   .skill ul {
@@ -172,6 +187,7 @@ section {
         margin-bottom: 5px;
         color: #333;
         box-shadow: 0.1px 0.1px 5px $secondary-color;
+        @include normal;
       }
       textarea {
         min-height: 9rem;
@@ -187,11 +203,21 @@ section {
         border: 2px solid $secondary-color;
         // box-shadow: 0.1px 0.1px 4px $secondary-color;
         @include easeOut;
+        @include normal;
 
         &:hover {
           background: $secondary-color;
           color: $primary-color;
           padding: 7px;
+        }
+      }
+      span {
+        width: 100%;
+        &success {
+          background: $secondary-color;
+        }
+        &error {
+          background: red;
         }
       }
     }
@@ -229,6 +255,7 @@ section {
     text-align: center;
     color: $text-color;
     font-size: 1.7rem;
+    justify-content: center;
 
     a {
       padding: 0.7rem;

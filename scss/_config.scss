@@ -5,6 +5,62 @@ $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
 
+@mixin normal {
+  -vendor-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@mixin slow {
+  -vendor-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+@mixin delay {
+  -vendor-animation-duration: 1.1s;
+  animation-duration: 1.1s;
+  -vendor-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+@mixin inOrder {
+  .first {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  .second {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 0.25s;
+    animation-delay: 0.25s;
+  }
+  .third {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  .fourth {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 0.75s;
+    animation-delay: 0.75s;
+  }
+  .fifth {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  .sixth {
+    -vendor-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -vendor-animation-delay: 1.25s;
+    animation-delay: 1.25s;
+  }
+}
+
 @mixin easeOut {
   transition: all 0.5s ease-out;
 }
@@ -18,6 +74,8 @@ $background-opacity: 0.9;
         ),
         $home-image;
       background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;
     }
