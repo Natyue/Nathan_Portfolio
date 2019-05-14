@@ -1,4 +1,6 @@
 <?php
+$error = $success = $nameValue = $emailValue = $messageValue = "";
+
 include "phpmailer/PHPMailerAutoload.php"; // include the library file
 include "phpmailer/class.phpmailer.php"; // include the class name
 include "phpmailer/class.smtp.php";
@@ -40,7 +42,11 @@ Message:	".$message."
 
     $mail->Body = $allMsg;
     if (!$mail->send()) {
+       $nameValue = $name;
+       $emailValue = $email;
+       $messageValue = $message;
        $error = "Sorry, Message was not sent. Please try again.";
+       
     } else {
           $success = "Thank You! Your mail was sent successfully!";
       }
@@ -240,7 +246,7 @@ function validateInput($data) {
       </h2>
 
       <div class="form-container">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+        <form action="#contact" method="POST">
           <div>
             <input
               class="aniview"
@@ -248,6 +254,7 @@ function validateInput($data) {
               type="text"
               name="name"
               placeholder="Name"
+              value="<?php echo $nameValue;?>"
               required
             />
           </div>
@@ -258,6 +265,7 @@ function validateInput($data) {
               type="email"
               name="email"
               placeholder="Email"
+              value="<?php echo $emailValue;?>"
               required
             />
           </div>
@@ -268,15 +276,19 @@ function validateInput($data) {
               name="message"
               placeholder="Your Message"
               required
-            ></textarea>
+            ><?php echo $messageValue;?></textarea>
           </div>
-          <span class="success"><?php echo $success?></span>
-          <span class="error"><?php echo $error?></span>
+          <?php if ($success){?>
+            <div class="success"><?php echo $success;?></div>
+          <?php } else if ($error) {?>
+            <div class="error"><?php echo $error;?></div>
+          <?php } ?>
+
           <button
             class="aniview"
             data-av-animation="slideInRight"
             type="submit"
-            name="button"
+            name="submit"
           >
             Submit
           </button>

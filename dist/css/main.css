@@ -27,7 +27,7 @@
 * {
   box-sizing: border-box; }
 
-div#preload {
+#preload {
   display: none; }
 
 body {
@@ -198,12 +198,16 @@ section {
         background: #04c2c9;
         color: #fff;
         padding: 7px; }
-    #contact .form-container form span {
-      width: 100%; }
-      #contact .form-container form spansuccess {
-        background: #04c2c9; }
-      #contact .form-container form spanerror {
-        background: red; }
+    #contact .form-container form div.success {
+      color: #fff;
+      padding: 7px;
+      margin-bottom: 2px;
+      background: #0c7777cf; }
+    #contact .form-container form div.error {
+      color: #fff;
+      padding: 7px;
+      margin-bottom: 2px;
+      background: #f436dbeb; }
 
 #contact .boxes {
   display: flex;

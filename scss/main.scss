@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-div #preload {
+#preload {
   display: none;
 }
 
@@ -211,13 +211,18 @@ section {
           padding: 7px;
         }
       }
-      span {
-        width: 100%;
-        &success {
-          background: $secondary-color;
+      div {
+        &.success {
+          color: $primary-color;
+          padding: 7px;
+          margin-bottom: 2px;
+          background: #0c7777cf;
         }
-        &error {
-          background: red;
+        &.error {
+          color: $primary-color;
+          padding: 7px;
+          margin-bottom: 2px;
+          background: #f436dbeb;
         }
       }
     }
