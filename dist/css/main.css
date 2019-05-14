@@ -17,7 +17,7 @@
       font-size: 1rem;
       text-transform: uppercase;
       padding: 1rem;
-      font-weight: 400;
+      font-weight: 600;
       color: #fff;
       text-decoration: none;
       transition: all 0.5s ease-out; }
@@ -100,20 +100,23 @@ section {
       section .icons a:hover {
         color: #04c2c9;
         transition: all 0.5s ease-out; }
-  section#home {
-    overflow: hidden;
-    height: 100vh; }
-    section#home#home {
-      background: linear-gradient(rgba(49, 46, 46, 0.84), rgba(16, 16, 16, 0.84)), url(../img/background.jpg);
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1; }
-    section#home h1 {
-      margin-top: 20vh; }
   section#contact {
     min-height: calc(100vh - 130px); }
+
+#home {
+  overflow: hidden;
+  height: 100vh; }
+  #home#home {
+    background: linear-gradient(rgba(49, 46, 46, 0.84), rgba(16, 16, 16, 0.84)), url(../img/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; }
+  #home h1 {
+    margin-top: 20vh; }
+  #home .sm-heading {
+    margin-bottom: 0; }
 
 .about-info {
   display: grid;
@@ -286,28 +289,6 @@ section {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr); }
-  section {
-    align-items: center;
-    text-align: center; }
-    section .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  .about-info {
-    grid-template-areas: "bio" "skill1";
-    grid-template-columns: 1fr; }
-    .about-info .skill ul {
-      border-top: #04c2c9 5px solid;
-      border-bottom: #04c2c9 5px solid;
-      border-left: none;
-      padding: 1.5rem; }
-  form {
-    margin-bottom: 2rem; } }
-
-@media screen and (max-width: 500px) {
-  .projects {
-    grid-template-columns: 1fr; }
   .menu-btn {
     position: absolute;
     z-index: 3;
@@ -323,8 +304,8 @@ section {
       transition: all 0.5s ease-out; }
     .menu-btn.close {
       transform: rotate(180deg);
-      top: 0;
-      right: 0; }
+      top: 3px;
+      right: 3px; }
       .menu-btn.close .btn-line:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px); }
       .menu-btn.close .btn-line:nth-child(2) {
@@ -335,7 +316,8 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    visibility: hidden; }
+    visibility: hidden;
+    z-index: 1; }
     .menu.show {
       visibility: visible; }
     .menu-nav {
@@ -365,13 +347,14 @@ section {
       position: relative;
       font-size: 1.9rem;
       text-transform: uppercase;
-      padding: 1rem 0;
+      margin: 0.5rem !important;
+      padding: 0.5rem !important;
       font-weight: 300;
       color: #fff;
       text-decoration: none;
       transition: all 0.5s ease-out; }
       .menu .nav-link:hover {
-        color: #04c2c9; }
+        color: #04c2c9 !important; }
   .nav-item:nth-child(1) {
     transition-delay: 0.1s; }
   .nav-item:nth-child(2) {
@@ -380,6 +363,32 @@ section {
     transition-delay: 0.3s; }
   .nav-item:nth-child(4) {
     transition-delay: 0.4s; }
+  .main-heading {
+    font-size: 3rem !important; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); }
+  section {
+    align-items: center;
+    text-align: center; }
+    section .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  .about-info {
+    grid-template-areas: "bio" "skill1";
+    grid-template-columns: 1fr; }
+    .about-info .skill ul {
+      border-top: #04c2c9 5px solid;
+      border-bottom: #04c2c9 5px solid;
+      border-left: none;
+      padding: 1.5rem; }
+  form {
+    margin-bottom: 2rem; } }
+
+@media screen and (max-width: 500px) {
+  .main-heading {
+    font-size: 2.5rem !important; }
+  .projects {
+    grid-template-columns: 1fr; }
   .about-info {
     grid-template-areas: "bio" "skill1";
     grid-template-columns: 1fr; }

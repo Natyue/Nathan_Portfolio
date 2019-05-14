@@ -14,6 +14,10 @@
 
 //Tablets & Small Laptops
 @include mediaMd {
+  @include toggleButton;
+  .main-heading {
+    font-size: 3rem !important;
+  }
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -48,11 +52,12 @@
 
 //Smartphones
 @include mediaSm {
+  .main-heading {
+    font-size: 2.5rem !important;
+  }
   .projects {
     grid-template-columns: 1fr;
   }
-
-  @include toggleButton;
 
   .about-info {
     grid-template-areas:

@@ -103,8 +103,8 @@ $background-opacity: 0.9;
     // Rotate Into X With Menu Lines
     &.close {
       transform: rotate(180deg);
-      top: 0;
-      right: 0;
+      top: 3px;
+      right: 3px;
 
       .btn-line {
         //line 1 - Rotate
@@ -130,6 +130,7 @@ $background-opacity: 0.9;
     top: 0;
     width: 100%;
     visibility: hidden;
+    z-index: 1;
 
     &.show {
       visibility: visible;
@@ -174,14 +175,15 @@ $background-opacity: 0.9;
       position: relative;
       font-size: 1.9rem;
       text-transform: uppercase;
-      padding: 1rem 0;
+      margin: 0.5rem !important;
+      padding: 0.5rem !important;
       font-weight: 300;
       color: $primary-color;
       text-decoration: none;
       @include easeOut;
 
       &:hover {
-        color: $secondary-color;
+        color: $secondary-color !important;
       }
     }
   }

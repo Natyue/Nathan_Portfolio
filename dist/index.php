@@ -83,12 +83,7 @@ function validateInput($data) {
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
     />
     <link rel="stylesheet" href="css/main.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="js/jquery.aniview.js"></script>
+
     <title>Welcome To My Portfolio</title>
   </head>
   <body>
@@ -332,6 +327,12 @@ function validateInput($data) {
       </div>
       Copyright &copy; 2019 Nathan Yue
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/jquery.aniview.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
